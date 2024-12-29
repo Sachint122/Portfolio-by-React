@@ -5,6 +5,8 @@ import Home from './HTML/Home';
 import Contact from './HTML/Contact';
 import Internship from './HTML/Internship';
 import Project from './HTML/project';
+import Eduacation from './HTML/Education';
+import Skills from './HTML/Skills';
 import React from "react";
 import { useState } from "react";
 import {
@@ -26,6 +28,8 @@ function App() {
         <Route path="/Contact"    element={showContact && <Contact />} />
         <Route path="/Internship" element={showContact && <Internship />} />
         <Route path="/Project" element={showContact && <Project />} />
+        <Route path="/Eduacation" element={showContact && <Eduacation />} />
+        <Route path="/Skills" element={showContact && <Skills />} />
       </Routes>
       <Footer />
     </Router>

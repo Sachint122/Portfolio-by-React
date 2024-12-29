@@ -17,10 +17,10 @@ export default function NavBar({ onContactClick }) {
                 <Link to="/Project" onClick={onContactClick}>Projects</Link>
             </span>
             <span className="submain">
-                <Link to="Eduacation.html" onClick={onContactClick}>Education</Link>
+                <Link to="/Eduacation" onClick={onContactClick}>Education</Link>
             </span>
             <span className="submain">
-                <Link to="Skills.html" onClick={onContactClick}>Skills</Link>
+                <Link to="/Skills" onClick={onContactClick}>Skills</Link>
             </span>
         </div>
     )
