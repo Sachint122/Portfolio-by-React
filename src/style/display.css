@@ -1,9 +1,18 @@
 * {
     margin: 0px;
     padding: 0px;
-    background-color: black;
     font-family: Arial, sans-serif;
 }
+
+body {
+    background-image: url("../image/home-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 /* Portfolio Section */
 .portfolio-section {
     padding: 20px;
@@ -17,9 +26,10 @@
 }
 
 .portfolio-header p {
-    color: #ffa500; 
+    color: #ffa500;
     font-size: 1.2em;
 }
+
 .portfolio-projects {
     display: flex;
     flex-wrap: wrap;
@@ -29,6 +39,8 @@
 
 /* Individual Project Card */
 .project-card {
+    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px); 
     box-shadow: 0px 0px 25px rgba(227, 8, 8, 0.485);
     border-radius: 20px;
     width: 300px;
@@ -36,24 +48,28 @@
 }
 
 .project-card h2 {
-    color: #ff4500; /* Orange-red for project titles */
+    color: #ff4500;
+    /* Orange-red for project titles */
     font-size: 1.5em;
-    text-shadow: 1px 1px 3px rgba(255, 69, 0, 0.8); /* Glowing effect */
+    text-shadow: 1px 1px 3px rgba(255, 69, 0, 0.8);
+    /* Glowing effect */
 }
 
 .project-card p {
-    color: #dcdcdc; /* Light gray for project descriptions */
+    color: #dcdcdc;
+    /* Light gray for project descriptions */
     font-size: 1em;
     line-height: 1.5;
 }
-.project-card:hover{
+
+.project-card:hover {
     box-shadow: 0px 0px 25px rgba(2, 252, 194, 0.422);
     transform: scale(1.1);
 }
 
 .main {
     padding-right: 20px;
-    background-color: rgb(25, 104, 194);
+    background-color: #0ca7fb;
     height: 60px;
     border: 2px solid black;
     display: flex;
@@ -71,7 +87,9 @@
 }
 
 .homeContent {
-    background-color: rgba(0, 0, 0, 0);
+    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
+    width: 450px;
     margin: auto;
     display: flex;
     justify-content: center;
@@ -99,6 +117,8 @@
 }
 
 .contact-info {
+    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
     height: auto;
     text-align: center;
     width: 600px;
@@ -107,7 +127,10 @@
     box-shadow: 0px 0px 25px rgba(227, 8, 8, 0.485);
 
 }
-.form{
+
+.form {
+    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
     height: 10px;
     overflow: hidden;
     background-color: rgba(237, 16, 16, 0);
@@ -119,6 +142,9 @@
 }
 
 .MAIN {
+    /* filter: blur(5px); */
+    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
     height: 10px;
     overflow: hidden;
     background-color: rgba(237, 16, 16, 0);
@@ -150,7 +176,8 @@ img {
 
 h2,
 h4 {
-    text-shadow: 3px 3px 10px rgba(249, 0, 0, 0.815); /* Glowing effect */
+    text-shadow: 3px 3px 10px rgba(249, 0, 0, 0.815);
+    /* Glowing effect */
     color: lightblue;
     padding: 10px;
     margin: 5px;
@@ -201,15 +228,7 @@ li {
     transform: scale(1.1);
     /* Slight zoom effect */
 }
-
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
 .footer {
-    background-color: rgba(255, 0, 0, 0);
     text-align: center;
     font-size: 0.7em;
     margin-top: auto;
@@ -221,30 +240,40 @@ body {
     font-size: 17px;
     background-color: rgba(255, 0, 0, 0);
 }
-#addbook_inlibr{
-      padding: 10px;
-      margin-right: auto;
-      margin-left: auto;
-      margin-top: 10px;
-      width: 380px;
-      height: 200px;
-} 
-#Massage{
+
+#addbook_inlibr {
+    padding: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10px;
+    width: 380px;
+    height: 200px;
+}
+
+#Massage {
     width: 100%;
-    max-width: 340px; /* Limit the width for readability */
-    min-width: 300px; /* Minimum width */
+    max-width: 340px;
+    /* Limit the width for readability */
+    min-width: 300px;
+    /* Minimum width */
     height: 60px;
     padding: 10px;
     font-size: 16px;
-    color: #add8e6; /* Light blue text */
-    background-color: #333; /* Dark background for contrast */
-    border: 1px solid #444; /* Border matching dark theme */
+    color: #add8e6;
+    /* Light blue text */
+    background-color: #333;
+    /* Dark background for contrast */
+    border: 1px solid #444;
+    /* Border matching dark theme */
     border-radius: 5px;
-    resize: none; /* Prevent manual resizing */
-    overflow-wrap: break-word; /* Ensure long words wrap */
+    resize: none;
+    /* Prevent manual resizing */
+    overflow-wrap: break-word;
+    /* Ensure long words wrap */
     margin-top: 10px;
     margin-left: 10px;
 }
+
 label {
     top: 20px;
     margin-left: 16px;
@@ -267,8 +296,9 @@ label {
     background-color: hsla(209, 100.00%, 62.89%, 1.00);
     color: hsla(0, 100.00%, 49.27%, 1.00);
     text-align: center;
-  }
-  input {
+}
+
+input {
     margin-left: 175px;
     height: 20px;
     width: 190px;
@@ -289,9 +319,9 @@ label {
     border-radius: 5px;
     background-color: hsla(0, 0.00%, 96.67%, 1.00);
     mix-blend-mode: normal;
-  }
-  
-  button {
+}
+
+button {
     display: block;
     border-top-width: 1px;
     border-top-color: hsla(166, 100.00%, 49.80%, 1.00);
@@ -309,23 +339,23 @@ label {
     outline-style: solid;
     outline-width: 1px;
     color: hsla(156, 100.00%, 48.93%, 1.00);
-  }
-  
-  .submit-button{
+}
+
+.submit-button {
     width: 100px;
     margin-top: 8px;
     margin-left: auto;
     margin-right: 40px;
-  }
-  
-  .reset{
+}
+
+.reset {
     width: 100px;
     margin-top: -17px;
     margin-left: 36px;
-  }
-  
+}
+
 .button-position2 {
     width: 100px;
     margin-top: -17px;
     margin-left: 180px;
-  }
+}
