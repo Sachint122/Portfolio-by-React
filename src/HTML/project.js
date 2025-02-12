@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect, useRef, React } from 'react';
 import '../style/project.css';
 import project1 from '../image/project/home.jpg'
 import project2 from '../image/project/Library.png'
@@ -7,17 +7,23 @@ import project4 from '../image/project/Destination.png'
 import project5 from '../image/project/E-commorce.png'
 export default function Project() {
     const [height, setHeight] = useState("10px");
+    const contentRef = useRef(null);  // Reference to the content container
+
     useEffect(() => {
         const timeout = setTimeout(() => {
-            setHeight("2450px");
+            // Get the actual height of the content and set it
+            if (contentRef.current) {
+                setHeight(`${contentRef.current.scrollHeight}px`);
+            }
         }, 10);
+
         return () => clearTimeout(timeout);
     }, []);
     const DivStyles = {
         height: height,
         transition: "height 2s ease-in-out",
-        overflow: "hidden"
-    }
+        overflow: "hidden",
+    };
     const projects = [
         {
             title: "Library Management System",
@@ -53,7 +59,7 @@ export default function Project() {
     return (
         <>
             {/* <!-- Projects Section --> */}
-            <div className="projectMAIN" style={DivStyles}>
+            <div className="projectMAIN" style={DivStyles} ref={contentRef}>
                 <h2>Projects</h2>
 
                 {projects.map((project, index) => (
@@ -68,9 +74,7 @@ export default function Project() {
                                     <a href={project.link} target="_blank" rel="noreferrer">Link</a>
                                 </div>
                             </div>
-                            <p>{project.description.split("\n").map((line, i) => (
-                                <React.Fragment key={i}>{line}<br /></React.Fragment>
-                            ))}</p>
+                            <p>{project.description}</p>
                         </div>
                     </div>
                 ))}
@@ -85,9 +89,7 @@ export default function Project() {
                                 <a href={homeApp.link} target="_blank" rel="noreferrer">Link</a>
                             </div>
                         </div>
-                        <p>{homeApp.description.split("\n").map((line, i) => (
-                            <React.Fragment key={i}>{line}<br /></React.Fragment>
-                        ))}</p>
+                        <p>{homeApp.description}</p>
                     </div>
                 </div>
             </div>

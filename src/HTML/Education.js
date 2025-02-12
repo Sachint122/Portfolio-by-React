@@ -1,22 +1,28 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect, useRef, React } from 'react';
 
 export default function Education() {
     const [height, setHeight] = useState("10px");
+    const contentRef = useRef(null);  // Reference to the content container
+
     useEffect(() => {
         const timeout = setTimeout(() => {
-            setHeight("750px");
-        }, 10); // Small delay to trigger transition
-        return () => clearTimeout(timeout); // Clean up timeout when unmounting
-    }, []); // Run effect only on mount
+            // Get the actual height of the content and set it
+            if (contentRef.current) {
+                setHeight(`${contentRef.current.scrollHeight}px`);
+            }
+        }, 10);
+
+        return () => clearTimeout(timeout);
+    }, []);
     const DivStyles = {
         height: height,
         transition: "height 2s ease-in-out",
-        overflow: "hidden"
-    }
+        overflow: "hidden",
+    };
     return (
         <>
             {/* <!-- Education Section --> */}
-            <div className="MAIN" style={DivStyles}>
+            <div className="MAIN" style={DivStyles} ref={contentRef}>
                 <h2>Education</h2>
                 {/* <!-- ITI Details --> */}
                 <h3><a href="https://ncvtmis.gov.in/pages/home.aspx">NCVT ITI</a></h3>

@@ -1,21 +1,27 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect, useRef, React } from 'react';
 export default function Internship() {
     const [height, setHeight] = useState("10px");
+    const contentRef = useRef(null);  // Reference to the content container
+
     useEffect(() => {
         const timeout = setTimeout(() => {
-            setHeight("980px");
-        }, 10); // Small delay to trigger transition
-        return () => clearTimeout(timeout); // Clean up timeout when unmounting
-    }, []); // Run effect only on mount
-    const DivStyles={
+            // Get the actual height of the content and set it
+            if (contentRef.current) {
+                setHeight(`${contentRef.current.scrollHeight}px`);
+            }
+        }, 10);
+
+        return () => clearTimeout(timeout);
+    }, []);
+    const DivStyles = {
         height: height,
         transition: "height 2s ease-in-out",
-        overflow: "hidden"
-    }
+        overflow: "hidden",
+    };
     return (
         <>
             {/* <!-- Internship and Experience Section --> */}
-            <div className="MAIN" style={DivStyles}>
+            <div className="MAIN" style={DivStyles} ref={contentRef}>
                 <h2>Internship and Experience</h2>
                 <h3>Internship</h3>
                 <p><strong>Role:</strong> Java Full Stack Developer at <em>Codegan</em></p>

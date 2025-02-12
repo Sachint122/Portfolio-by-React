@@ -1,17 +1,23 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect, useRef, React } from 'react';
 export default function Skills() {
     const [height, setHeight] = useState("10px");
+    const contentRef = useRef(null);  // Reference to the content container
+
     useEffect(() => {
         const timeout = setTimeout(() => {
-            setHeight("950px");
-        }, 10); // Small delay to trigger transition
-        return () => clearTimeout(timeout); // Clean up timeout when unmounting
-    }, []); // Run effect only on mount
+            // Get the actual height of the content and set it
+            if (contentRef.current) {
+                setHeight(`${contentRef.current.scrollHeight}px`);
+            }
+        }, 10);
+
+        return () => clearTimeout(timeout);
+    }, []);
     const DivStyles = {
         height: height,
         transition: "height 2s ease-in-out",
-        overflow: "hidden"
-    }
+        overflow: "hidden",
+    };
     const Languages = [
         "Java",
         "JavaScript",
@@ -42,7 +48,7 @@ export default function Skills() {
     ];
     return (
         <>
-            <div className="MAIN" style={DivStyles}>
+            <div className="MAIN" style={DivStyles} ref={contentRef}>
                 <h2>My Skills</h2>
                 <h3>Programming Languages</h3>
                 <ul>

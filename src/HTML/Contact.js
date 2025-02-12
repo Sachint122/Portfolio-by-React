@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect, useRef, React } from 'react';
 import '../style/contact.css'
 import Form from './Form';
 const styles = {
@@ -7,17 +7,23 @@ const styles = {
 }
 export default function Contact() {
     const [height, setHeight] = useState("10px");
+    const contentRef = useRef(null);  // Reference to the content container
+
     useEffect(() => {
         const timeout = setTimeout(() => {
-            setHeight("450px");
-        }, 10); // Small delay to trigger transition
-        return () => clearTimeout(timeout); // Clean up timeout when unmounting
-    }, []); // Run effect only on mount
-    const DivStyles={
+            // Get the actual height of the content and set it
+            if (contentRef.current) {
+                setHeight(`${contentRef.current.scrollHeight}px`);
+            }
+        }, 10);
+
+        return () => clearTimeout(timeout);
+    }, []);
+    const DivStyles = {
         height: height,
         transition: "height 2s ease-in-out",
-        overflow: "hidden"
-    }
+        overflow: "hidden",
+    };
     return (
         <>
             <div className="contact-info">
@@ -30,7 +36,7 @@ export default function Contact() {
                 </ul>
                 <p className="unique-message">"Let’s collaborate and create something amazing together. Reach out to me today!"</p>
             </div>
-            <div className="formdiv" style={DivStyles}>
+            <div className="formdiv" style={DivStyles} ref={contentRef}>
                 <div id="book_input_detailsid ">
                    <Form/>
                 </div>
