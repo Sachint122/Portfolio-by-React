@@ -1,11 +1,13 @@
 /* 🔷 Project Wrapper */
-.projectdiv{
+.projectdiv {
     display: flex;
 }
-.projectlink{
+
+.projectlink {
     width: 100px;
     margin-left: 10px;
 }
+
 .projectMAIN {
     margin-top: 80px;
     margin-left: auto;
@@ -38,6 +40,7 @@
     filter: blur(20px);
     opacity: 0.5;
 }
+
 .project-wrapper {
     height: 400px;
     display: flex;
@@ -63,18 +66,21 @@
 
 .project-wrapper .left img {
     width: 100%;
-    /* height: 150px; */
+    height: auto; /* Removed the fixed height */
     border-radius: 10px;
     object-fit: cover;
     box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.5);
 }
-.leftHome{
+
+.leftHome {
     flex: 0 0 550px;
 }
-.homeApp{
+
+.homeApp {
     width: auto;
     height: 380px;
 }
+
 /* 📋 Content Styling */
 .project-wrapper .right {
     flex: 1;
@@ -103,6 +109,22 @@
 }
 
 /* 🔷 Responsive Design */
+@media (max-width: 1200px) {
+    .project-wrapper {
+        height: auto;
+        padding: 15px;
+    }
+
+    .project-wrapper .left {
+        flex: 1;
+    }
+
+    .project-wrapper .right {
+        flex: 1;
+        margin-left: 15px;
+    }
+}
+
 @media (max-width: 768px) {
     .project-wrapper {
         flex-direction: column;
@@ -111,9 +133,16 @@
 
     .project-wrapper .left img {
         margin-bottom: 15px;
+        width: 100%; /* Ensures image stays responsive */
     }
 
     .project-wrapper .right {
         margin-left: 0;
+        text-align: center; /* Ensures text is centered on smaller screens */
+    }
+
+    .homeApp {
+        width: 100%; /* Ensure it adapts to screen width */
+        height: auto;
     }
 }
