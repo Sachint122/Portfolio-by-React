@@ -3,7 +3,7 @@ export default function Internship() {
     const [height, setHeight] = useState("10px");
     useEffect(() => {
         const timeout = setTimeout(() => {
-            setHeight("650px");
+            setHeight("980px");
         }, 10); // Small delay to trigger transition
         return () => clearTimeout(timeout); // Clean up timeout when unmounting
     }, []); // Run effect only on mount

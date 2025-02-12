@@ -1,0 +1,47 @@
+.unique-message {
+    color: lightblue;
+    font-size: 30px;
+}
+
+.contact-info a {
+    text-align: left;
+    margin-top: -20px;
+    font-size: 20px;
+}
+
+.contact-info ul {
+    list-style-type: none;
+}
+
+.contact-info li {
+    margin-left: 70px;
+    text-align: start;
+}
+
+.contact-info {
+    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
+    height: auto;
+    text-align: center;
+    width: 600px;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    padding: 20px;
+    box-shadow: 0px 0px 25px rgba(227, 8, 8, 0.485);
+
+}
+
+ .formdiv {
+    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
+    height: 10px;
+    overflow: hidden;
+    background-color: rgba(237, 16, 16, 0);
+    width: 600px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+
+}

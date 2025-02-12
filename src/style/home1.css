@@ -1,0 +1,205 @@
+/* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("../image/home-bg (2).jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 1.5s ease-in-out;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* Portfolio Section */
+.portfolio-section {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 40px 5%;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+/* Portfolio Header */
+.portfolio-header {
+    text-align: center;
+    margin-bottom: 30px;
+    animation: slideDown 1s ease-in-out;
+}
+
+.portfolio-header p, .info p {
+    color: #00ffff; /* Neon Cyan */
+    font-size: 1.2em;
+    text-shadow: 0px 0px 10px rgba(0, 255, 255, 0.8);
+}
+
+/* Portfolio Projects Container */
+.portfolio-projects {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Individual Project Card */
+.project-card {
+    flex: 1 1 300px; /* Minimum width for responsiveness */
+    max-width: 30%;
+    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
+    box-shadow: 0px 0px 20px rgba(227, 8, 8, 0.485);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid rgba(0, 255, 255, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Glowing Border Effect */
+.project-card::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 15px;
+    background: linear-gradient(45deg, #00ffff50, #ff440056, #ff00ff50, #00ffff50);
+    z-index: -1;
+    filter: blur(15px);
+    opacity: 0.5;
+}
+
+/* Project Card Hover Effect */
+.project-card:hover {
+    box-shadow: 0px 0px 25px rgba(2, 252, 194, 0.7);
+    transform: scale(1.05) rotate(2deg);
+    border-color: #ff00ff;
+}
+
+/* Title Styling */
+.project-card h2 {
+    color: #ff4500;
+    font-size: 1.5em;
+    text-shadow: 1px 1px 3px rgba(255, 69, 0, 0.8);
+}
+
+/* Project Description */
+.project-card p {
+    color: #dcdcdc;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+/* Home Content */
+.homeContent {
+    margin-top: 80px;
+    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
+    width: 80%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Image Styling */
+.homeContent img {
+    height: 250px;
+    width: auto;
+    border-radius: 30px;
+    box-shadow: 0px 0px 25px rgba(227, 8, 8, 0.7);
+    transition: transform 0.4s ease;
+}
+
+/* Image Hover Effect */
+.homeContent img:hover {
+    transform: scale(1.1) rotateY(10deg);
+    box-shadow: 0px 0px 30px rgba(0, 255, 255, 0.8);
+}
+
+/* 🚀 Responsive Adjustments */
+@media (max-width: 1024px) {
+    .portfolio-projects {
+        gap: 20px;
+    }
+    
+    .project-card {
+        flex: 1 1 45%;
+        max-width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-projects {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .project-card {
+        flex: 1 1 90%;
+        max-width: 90%;
+    }
+
+    .homeContent {
+        width: 90%;
+    }
+
+    .homeContent img {
+        height: 200px;
+    }
+}
+
+/* ✨ Animations ✨ */
+
+/* Fade In Effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Slide Down Effect */
+@keyframes slideDown {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Fade In Up Effect */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

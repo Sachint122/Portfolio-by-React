@@ -1,0 +1,18 @@
+.social-links {
+    background-color: rgba(255, 0, 0, 0);
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer {
+    text-align: center;
+    font-size: 0.7em;
+    margin-top: auto;
+    width: auto;
+}
+
+.footer p {
+    font-size: 17px;
+    background-color: rgba(255, 0, 0, 0);
+}

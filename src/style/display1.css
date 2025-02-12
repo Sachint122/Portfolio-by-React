@@ -1,0 +1,206 @@
+/* 🔷 MAIN Container */
+.MAIN {
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
+    background: rgba(0, 0, 0, 0.5);
+    width: 90%;
+    max-width: 600px;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.5);
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* 💡 Glowing Borders */
+.MAIN::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 15px;
+    background: linear-gradient(45deg, #00ffff30, #ff440036, #ff00ff30, #00ffff30);
+    z-index: -1;
+    filter: blur(20px);
+    opacity: 0.5;
+}
+
+/* 🔗 Stylish Links */
+a {
+    text-decoration: none;
+    color: #ff3131;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+a:hover {
+    color: #00ffff;
+    text-shadow: 0px 0px 10px rgba(0, 255, 255, 0.8);
+}
+
+/* 🔥 Glitch Effect for Headers */
+h2,
+h4 {
+    text-shadow: 0px 0px 8px rgba(249, 0, 0, 0.815);
+    color: #00ffff;
+    font-size: 30px;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    animation: glitch 1.5s infinite alternate;
+}
+
+/* ⚡ Glitch Effect */
+@keyframes glitch {
+    0% {
+        transform: skewX(0deg);
+    }
+
+    20% {
+        transform: skewX(5deg);
+    }
+
+    40% {
+        transform: skewX(-5deg);
+    }
+
+    60% {
+        transform: skewX(2deg);
+    }
+
+    80% {
+        transform: skewX(-2deg);
+    }
+
+    100% {
+        transform: skewX(0deg);
+    }
+}
+
+/* 💙 High-Tech H3 Styling */
+h3 {
+    color: #00e6e6;
+    font-size: 22px;
+    margin-left: 5px;
+}
+
+/* 📝 Paragraph Styling */
+p {
+    color: #D3D3D3;
+    font-size: 18px;
+    line-height: 1.8;
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.2);
+    margin: 10px 0;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* 📋 List Styles */
+ul {
+    font-size: 18px;
+    color: #CCCCCC;
+    padding-left: 20px;
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.2);
+}
+
+li {
+    text-align: left;
+    list-style: none;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+    transition: transform 0.3s ease;
+}
+
+/* 🔷 List Bullet Effect */
+li::before {
+    content: "⚡";
+    position: absolute;
+    left: 0;
+    color: #00ffff;
+    text-shadow: 0px 0px 8px rgba(0, 255, 255, 0.8);
+    font-size: 18px;
+}
+
+/* ⚡ List Hover Animation */
+li:hover {
+    transform: scale(1.05);
+    color: #ff4500;
+}
+
+/* 🚀 Hover & Scale Effects */
+p:hover {
+    transform: scale(1.05);
+}
+
+/* ✨ Responsive Adjustments */
+@media (max-width: 1024px) {
+    .MAIN {
+        width: 95%;
+    }
+
+    h2,
+    h4 {
+        font-size: 25px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .MAIN {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h2,
+    h4 {
+        font-size: 22px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    ul {
+        font-size: 16px;
+    }
+}
+
+/* ✨ Animations */
+
+/* 🌟 Fade In Effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* 🌟 Slide In Effect */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

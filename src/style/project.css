@@ -1,0 +1,119 @@
+/* 🔷 Project Wrapper */
+.projectdiv{
+    display: flex;
+}
+.projectlink{
+    width: 100px;
+    margin-left: 10px;
+}
+.projectMAIN {
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
+    background: rgba(0, 0, 0, 0.5);
+    width: 90%;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.5);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* 💡 Glowing Borders */
+.projectMAIN::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 15px;
+    background: linear-gradient(45deg, #00ffff30, #ff440036, #ff00ff30, #00ffff30);
+    z-index: -1;
+    filter: blur(20px);
+    opacity: 0.5;
+}
+.project-wrapper {
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 50px 0;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* 🚀 Hover Effect */
+.project-wrapper:hover {
+    transform: scale(1.02);
+}
+
+/* 🔷 Image Styling */
+.project-wrapper .left {
+    flex: 0 0 550px;
+}
+
+.project-wrapper .left img {
+    width: 100%;
+    /* height: 150px; */
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.5);
+}
+.leftHome{
+    flex: 0 0 550px;
+}
+.homeApp{
+    width: auto;
+    height: 380px;
+}
+/* 📋 Content Styling */
+.project-wrapper .right {
+    flex: 1;
+    margin-left: 20px;
+    text-align: left;
+}
+
+/* 📝 Text Adjustments */
+.project-wrapper h3 {
+    color: #00e6e6;
+    font-size: 22px;
+}
+
+.project-wrapper p {
+    text-align: center;
+    color: #D3D3D3;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* 📋 List Styling */
+.project-wrapper ul {
+    color: #CCCCCC;
+    font-size: 18px;
+    padding-left: 20px;
+}
+
+/* 🔷 Responsive Design */
+@media (max-width: 768px) {
+    .project-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .project-wrapper .left img {
+        margin-bottom: 15px;
+    }
+
+    .project-wrapper .right {
+        margin-left: 0;
+    }
+}

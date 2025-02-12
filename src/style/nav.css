@@ -1,0 +1,151 @@
+.navbar {
+    z-index: 100000;
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    background: linear-gradient(90deg, #191375, #192b41);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.nav-links {
+    height: 70px;
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.logo {
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.logo img {
+    width: 150px;
+    margin-top: -2px;
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+    position: relative;
+}
+
+.nav-links>li:hover a {
+    color: #ffdd00;
+    text-shadow: 0px 0px 10px #ffdd00;
+}
+
+a {
+    cursor: pointer;
+    color: #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 7px;
+    text-decoration: none;
+    position: relative;
+    height: 100%;
+    font-size: 1.3rem;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-links>li:hover>a {
+    transform: translateY(-2px);
+}
+
+.nav-links>li>a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 3px;
+    left: 0px;
+    background-color: #ffdd00;
+    transition: all 0.4s ease-in-out;
+    scale: 0 0;
+    visibility: hidden;
+}
+
+.nav-links>li:hover>a::before {
+    visibility: visible;
+    scale: 1 1;
+}
+
+.dropdown {
+    margin: 0 10px;
+}
+
+.dropdown>a::after {
+    content: '\25B6';
+    /* Right arrow */
+    margin-left: 5px;
+    font-size: 0.8rem;
+}
+
+.dropdown.open>a::after {
+    content: '\25BC';
+    /* Down arrow */
+}
+
+.dropdown-content {
+    /* color: #999; */
+    margin-top: 20px;
+    display: none;
+    position: absolute;
+    background: linear-gradient(90deg, #191375, #192b41);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    min-width: 150px;
+    border-radius: 5px;
+    overflow: hidden;
+    animation: slideDownd 0.3s ease-in-out;
+    z-index: 1;
+}
+
+@keyframes slideDownd {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    70% {
+        transform: scale(0.95);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+.dropdown.open .dropdown-content {
+    display: block;
+}
+
+
+.dropdown-content a {
+    color: #999;
+    padding: 8px 12px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease, padding-left 0.2s;
+}
+
+.dropdown-content a:hover {
+    padding-left: 15px;
+
+}

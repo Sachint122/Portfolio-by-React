@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
+import '../style/contact.css'
+import Form from './Form';
 const styles = {
-    fontsize: "20px"
+    height: "50px",
+    transition: "height 2s ease-in-out",
 }
 export default function Contact() {
     const [height, setHeight] = useState("10px");
     useEffect(() => {
         const timeout = setTimeout(() => {
-            setHeight("250px");
+            setHeight("450px");
         }, 10); // Small delay to trigger transition
         return () => clearTimeout(timeout); // Clean up timeout when unmounting
     }, []); // Run effect only on mount
@@ -27,17 +30,9 @@ export default function Contact() {
                 </ul>
                 <p className="unique-message">"Let’s collaborate and create something amazing together. Reach out to me today!"</p>
             </div>
-            <div className="form" style={DivStyles}>
+            <div className="formdiv" style={DivStyles}>
                 <div id="book_input_detailsid ">
-                    <form id="addbook_inlibr" className="MAIN" method="post">
-                        <label htmlFor="label1" className="field-label2-position">Enter Your Name:</label>
-                        <input type="text" id="bookCode" name="bookCode" placeholder="Enter Your Name Here" />
-                        <label htmlFor="label2" className="field-label3-position">Enter Your Contact:</label>
-                        <input type="text" id="authorName" name="authorName" placeholder="Enter Your Contact Here" />
-                        <textarea id="Massage" rows="4" placeholder="Type here..."></textarea>
-                        <button type="submit" className="submit-button">Submit</button>
-                        <button type="reset" className="reset">Reset</button>
-                    </form>
+                   <Form/>
                 </div>
             </div>
         </>

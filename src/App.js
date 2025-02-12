@@ -1,4 +1,5 @@
-import './style/display.css';
+// import './style/display.css';
+import '../src/style/display1.css';
 import Footer from './component/Footer';
 import NavBar from './component/NavBar';
 import Home from './HTML/Home';
@@ -14,6 +15,7 @@ import {
   Route,
   Routes
 } from "react-router-dom";
+import Scroll from './component/Scroll';
 function App() {
   const [showContact, setShowContact] = useState(false);
 
@@ -23,6 +25,7 @@ function App() {
   return (
     <Router>
       <NavBar onContactClick={handleContactClick} />
+      <Scroll/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Contact"    element={showContact && <Contact />} />

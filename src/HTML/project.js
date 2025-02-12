@@ -1,60 +1,97 @@
 import React, { useState, useEffect } from "react";
-
+import '../style/project.css';
+import project1 from '../image/project/home.jpg'
+import project2 from '../image/project/Library.png'
+import project3 from '../image/project/Pattern.png'
+import project4 from '../image/project/Destination.png'
+import project5 from '../image/project/E-commorce.png'
 export default function Project() {
     const [height, setHeight] = useState("10px");
     useEffect(() => {
         const timeout = setTimeout(() => {
-            setHeight("550px");
-        }, 10); // Small delay to trigger transition
-        return () => clearTimeout(timeout); // Clean up timeout when unmounting
-    }, []); // Run effect only on mount
-    const DivStyles={
+            setHeight("2450px");
+        }, 10);
+        return () => clearTimeout(timeout);
+    }, []);
+    const DivStyles = {
         height: height,
         transition: "height 2s ease-in-out",
         overflow: "hidden"
     }
-  return (
-    <>
-     {/* <!-- Projects Section --> */}
-    <div className="MAIN" style={DivStyles}>
-        <h2>Projects</h2>
+    const projects = [
+        {
+            title: "Library Management System",
+            link: "https://github.com/Sachint122/webapp.git",
+            description: "A full-stack web application designed to manage books, users, and transactions efficiently. Built using Node.js, Express, MongoDB, and Bootstrap, this system supports book issuance, return tracking, and user authentication. It provides a user-friendly dashboard for librarians and students, ensuring smooth operations and reducing manual workload.",
+            image: project2
+        },
+        {
+            title: "C++ Pattern Generator",
+            link: "https://github.com/Sachint122/C_C-Projects/blob/main/Pattern%20genrating%20using%20AI.CPP",
+            description: "A console-based application developed in C++ that dynamically generates different pattern designs. It includes pre-defined patterns such as pyramids, diamonds, numeric sequences, and custom user-defined patterns. This project demonstrates logic-building and problem-solving skills, making it useful for beginners learning loops and recursion in C++.",
+            image: project3
+        },
+        {
+            title: "Destination Technology Institute Website",
+            link: "https://github.com/Sachint122/Destination-by-React.git",
+            description: "A responsive educational website built for the Destination Technology Institute, featuring course details, student resources, and admission information. The site is optimized for both desktop and mobile devices, providing a seamless browsing experience. It incorporates modern UI/UX design principles, ensuring an engaging and professional look.",
+            image: project4
+        },
+        {
+            title: "E-commerce Console-Based Website (Java)",
+            link: "https://github.com/Sachint122/E_Commerce.git",
+            description: "A Java-based console application that simulates an e-commerce store where users can browse products, add them to a cart, and place orders. Built with object-oriented programming (OOP) principles, the project includes features like inventory management, order processing, and a user-friendly menu-driven interface.",
+            image: project5
+        }
+    ];
+    const homeApp = {
+        title: "Home Automation App",
+        link: "https://github.com/Sachint122/Home-Automation.git",
+        description: "A mobile application developed in Android Studio that allows users to remotely control home electrical appliances. It utilizes Bluetooth and IoT integration to enable seamless automation, enhancing convenience and energy efficiency. The app includes features such as real-time device status updates, scheduling, and security alerts for unauthorized access.",
+        image: project1
+    };
+    return (
+        <>
+            {/* <!-- Projects Section --> */}
+            <div className="projectMAIN" style={DivStyles}>
+                <h2>Projects</h2>
 
-        {/* <!-- Library Management System --> */}
-        <div>
-            <h3>Library Management System</h3>
-            <p>
-                <strong>Technologies Used:</strong> Node.js, Express.js, MongoDB, HTML, CSS, JavaScript, Bootstrap
-            </p>
-            <p>
-                A comprehensive system for managing library operations, including book inventory, user management, and
-                transaction tracking. The project structure includes:
-            </p>
-            <ul>
-                <li>Introduction to the system and its objectives</li>
-                <li>System analysis to identify requirements</li>
-                <li>Justification for technology selection</li>
-                <li>Detailed program code and testing processes</li>
-                <li>Results, discussion, and final conclusions</li>
-            </ul>
-        </div>
+                {projects.map((project, index) => (
+                    <div className="project-wrapper" key={index}>
+                        <div className="left">
+                            <img src={project.image} alt={project.title} />
+                        </div>
+                        <div className="right">
+                            <div className="projectdiv">
+                                <h3>{project.title}</h3>
+                                <div className="projectlink">
+                                    <a href={project.link} target="_blank" rel="noreferrer">Link</a>
+                                </div>
+                            </div>
+                            <p>{project.description.split("\n").map((line, i) => (
+                                <React.Fragment key={i}>{line}<br /></React.Fragment>
+                            ))}</p>
+                        </div>
+                    </div>
+                ))}
+                <div className="project-wrapper">
+                    <div className="leftHome">
+                        <img className="homeApp" src={homeApp.image} alt={homeApp.title} />
+                    </div>
+                    <div className="right">
+                        <div className="projectdiv">
+                            <h3>{homeApp.title}</h3>
+                            <div className="projectlink">
+                                <a href={homeApp.link} target="_blank" rel="noreferrer">Link</a>
+                            </div>
+                        </div>
+                        <p>{homeApp.description.split("\n").map((line, i) => (
+                            <React.Fragment key={i}>{line}<br /></React.Fragment>
+                        ))}</p>
+                    </div>
+                </div>
+            </div>
 
-        {/* <!-- Home Automation App --> */}
-        <div>
-            <h3>Home Automation App</h3>
-            <p>
-                <strong>Technologies Used:</strong> Android Studio
-            </p>
-            <p>
-                A smart home solution enabling users to control electrical appliances using a smartphone. This app
-                emphasizes:
-            </p>
-            <ul>
-                <li>Simple and intuitive user interface design</li>
-                <li>Seamless connectivity with home devices</li>
-                <li>Reliable and efficient performance for smart home control</li>
-            </ul>
-        </div>
-    </div>
-    </>
-  )
+        </>
+    )
 }
